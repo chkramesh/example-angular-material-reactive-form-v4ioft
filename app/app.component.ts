@@ -25,6 +25,7 @@ export class AppComponent {
     this.formGroup = this.formBuilder.group({
       'email': [null, [Validators.required, Validators.pattern(emailregex)], this.checkInUseEmail],
       'name': [null, Validators.required],
+      'lastname': [null, Validators.required],
       'password': [null, [Validators.required, this.checkPassword]],
       'description': [null, [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
       'validate': ''
@@ -47,6 +48,10 @@ export class AppComponent {
 
   get name() {
     return this.formGroup.get('name') as FormControl
+  }
+
+  get lastname() {
+    return this.formGroup.get('lastname') as FormControl
   }
 
   checkPassword(control) {
