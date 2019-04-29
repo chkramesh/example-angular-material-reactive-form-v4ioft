@@ -43,6 +43,16 @@ p {
   flex: 1 1 auto;
 }
 
+.first-field-width {
+    width:300px;
+}
+.second-field-width {
+    width:300px;
+}
+.third-field-width {
+    width:300px;
+}
+
 /*
 .example-spacer {
   flex: 1 1 auto;
