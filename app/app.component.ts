@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable }    from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'my-app',
@@ -26,13 +26,13 @@ export class AppComponent {
       'email': [null, [Validators.required, Validators.pattern(emailregex)], this.checkInUseEmail],
       'name': [null, Validators.required],
       'lastname': [null, Validators.required],
-      'gender' : '',
-      'storeId' : '',
-      'fromStore' : '',
-      'toStore' : '',
-      'region' : '',
-      'state' : '',
-      'country' : '',
+      'gender': '',
+      'storeName': '',
+      'fromStore': '',
+      'toStore': '',
+      'region': '',
+      'state': '',
+      'country': '',
       'password': [null, [Validators.required, this.checkPassword]],
       'description': [null, [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
       'validate': ''
@@ -81,7 +81,7 @@ export class AppComponent {
 
   getErrorEmail() {
     return this.formGroup.get('email').hasError('required') ? 'Field is required' :
-        this.formGroup.get('email').hasError('pattern') ? 'Not a valid emailaddress' :
+      this.formGroup.get('email').hasError('pattern') ? 'Not a valid emailaddress' :
         this.formGroup.get('email').hasError('alreadyInUse') ? 'This emailaddress is already in use' : '';
   }
 

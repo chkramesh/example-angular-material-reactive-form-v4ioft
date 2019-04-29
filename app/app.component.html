@@ -28,6 +28,41 @@
           {{ titleAlert }}
         </mat-error>
       </mat-form-field>
+
+      <mat-form-field >
+        <input matInput placeholder="Emailaddress" formControlName="email">
+        <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+          {{ getErrorEmail() }}
+        </mat-error>
+      </mat-form-field>
+  </div>
+
+   <div class="input-row" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" fxLayoutGap.lt-md="20px">
+      <mat-form-field >
+        <input matInput placeholder="Store Name" formControlName="storeName">
+      </mat-form-field>
+
+      <mat-form-field >
+        <input matInput placeholder="From Store" formControlName="fromStore">
+      </mat-form-field>
+
+      <mat-form-field >
+        <input matInput placeholder="To Store" formControlName="toStore">        
+      </mat-form-field>
+  </div>
+
+  <div class="input-row" fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px" fxLayoutGap.lt-md="20px">
+      <mat-form-field >
+        <input matInput placeholder="Region" formControlName="region">
+      </mat-form-field>
+
+      <mat-form-field >
+        <input matInput placeholder="State" formControlName="state">
+      </mat-form-field>
+
+      <mat-form-field >
+        <input matInput placeholder="Country" formControlName="country">        
+      </mat-form-field>
   </div>
 
     <mat-form-field class="form-element">
